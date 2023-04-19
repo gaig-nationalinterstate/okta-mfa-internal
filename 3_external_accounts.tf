@@ -43,6 +43,7 @@ resource "okta_policy_mfa" "external-accounts" {
         var.env == "qa" ? [
           data.okta_group.Copilot_Agents[0].id,
           data.okta_group.Copilot_Insureds[0].id,
+          data.okta_group.Copilot_Users[0].id,
           data.okta_group.MFA_Users[0].id,
           data.okta_group.Quote_Agents[0].id
           ] : (
